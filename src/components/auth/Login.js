@@ -14,7 +14,7 @@ import {validateEmail, validatePassword} from './utils/validation';
 const Login = () => {
   const [email, onchangeEmail] = useState('');
   const [password, onchangePassword] = useState('');
-  const [isEnabled, setIsEnabled] = useState(false);
+  const [isEnabled, setIsEnabled] = useState(true);
 
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
 

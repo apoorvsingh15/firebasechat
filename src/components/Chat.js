@@ -38,7 +38,7 @@ const Chat = ({user}) => {
       })
       .then(() => {
         setUserMessage('');
-        flatListRef.current.scrollToEnd({animated: true});
+        // flatListRef.current.scrollToEnd({animated: true});
       });
   };
 
@@ -75,6 +75,7 @@ const Chat = ({user}) => {
           renderItem={renderItem}
           keyExtractor={item => item.userId}
           ref={flatListRef}
+          onContentSizeChange={() => flatListRef.current.scrollToEnd()}
         />
       )}
 
