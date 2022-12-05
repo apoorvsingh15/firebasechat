@@ -15,7 +15,11 @@ import {useMessages} from '../hooks/useMessages';
 
 const Chat = ({user}) => {
   const [userMessage, setUserMessage] = useState('');
+
+  // custom hook for monitoring messages from firebase.
   const {messages, loading} = useMessages();
+
+  // ref to scroll user to bottom when a message is sent.
   const flatListRef = useRef(null);
 
   const onSendMessage = () => {
@@ -49,7 +53,7 @@ const Chat = ({user}) => {
     return (
       <View
         style={isMessageSentByUser ? styles.userChatStyle : styles.chatStyle}>
-        <Text>
+        <Text style={styles.userName}>
           {isMessageSentByUser ? 'You said' : `${item.userEmail} says`}
         </Text>
         <Text>{item.message}</Text>
@@ -91,8 +95,9 @@ const styles = StyleSheet.create({
   container: {backgroundColor: '#ECE5DD', height: '100%'},
   chatStyle: {
     backgroundColor: 'white',
-    padding: 20,
-    borderRadius: 80,
+    paddingHorizontal: 15,
+    paddingVertical: 5,
+    borderRadius: 10,
     borderTopLeftRadius: 0,
     borderBottomLeftRadius: 0,
     margin: 10,
@@ -100,8 +105,9 @@ const styles = StyleSheet.create({
   },
   userChatStyle: {
     backgroundColor: '#DCF8C6',
-    padding: 20,
-    borderRadius: 80,
+    paddingHorizontal: 15,
+    paddingVertical: 5,
+    borderRadius: 10,
     borderTopRightRadius: 0,
     borderBottomRightRadius: 0,
     margin: 10,
@@ -126,6 +132,10 @@ const styles = StyleSheet.create({
   },
   buttonMargin: {
     margin: 10,
+  },
+  userName: {
+    fontWeight: 'bold',
+    fontSize: 12,
   },
 });
 

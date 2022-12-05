@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Text, SafeAreaView} from 'react-native';
+import {SafeAreaView} from 'react-native';
 import auth from '@react-native-firebase/auth';
 
 import Login from '../components/auth/Login';

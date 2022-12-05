@@ -25,7 +25,7 @@ export const useMessages = () => {
 
   useEffect(() => {
     const unsubscribe = fetchMessages();
-    return unsubscribe;
+    return () => unsubscribe;
   }, []);
 
   return {messages, loading};
