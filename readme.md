@@ -7,7 +7,7 @@
 
 ## The application has only been tested for Android and made in react native CLI.
 
-## App link: https://i.diawi.com/nQgMaA valid till 6/12/2022.
+## App link: https://i.diawi.com/h4nHPt valid till 6/12/2022.
 
 Includes:
 
